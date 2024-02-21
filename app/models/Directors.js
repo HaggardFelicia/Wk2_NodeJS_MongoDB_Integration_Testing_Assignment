@@ -21,7 +21,7 @@ const directorsSchema = new mongoose.Schema(
             ],
             unique: true,
         },
-        Biography: {
+        biography: {
             type: String,
             required: [true, 'You are required to have a description'],
             maxlength: [500, 'Description cannot be more than 500 characters'],
