@@ -130,10 +130,10 @@
 									"\r",
 									"pm.test(\"Testing Person Added Information\", ()=>{\r",
 									"    const responseJson = pm.response.json();\r",
-									"    pm.expect(responseJson.name).to.eql(\"Domee Shi\");\r",
-									"    pm.expect(responseJson.age).to.eql(34);\r",
-									"    pm.expect(responseJson.email).to.eql(\"dshi@gmail.com\");\r",
-									"    pm.expect(responseJson.biography).to.eql(\"Domee Shi was born on August 19, 1989 in Chongqing, China. She is a writer, storyboard artist, and director, known for Turning Red (2022), Inside Out (2015) and Bao (2018).\");\r",
+									"    pm.expect(responseJson.name).to.eql(\"Clint Eastwood\");\r",
+									"    pm.expect(responseJson.age).to.eql(93);\r",
+									"    pm.expect(responseJson.email).to.eql(\"ceastwood@gmail.com\");\r",
+									"    pm.expect(responseJson.biography).to.eql(\"Clint Eastwood was born May 31, 1930 in San Francisco, to Clinton Eastwood Sr., a bond salesman and later manufacturing executive for Georgia-Pacific Corporation, and Ruth Wood (née Margret Ruth Runner), a housewife turned IBM clerk.\");\r",
 									"});\r",
 									""
 								],
@@ -146,7 +146,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"director\":{\r\n        \"name\": \"Domee Shi\",\r\n        \"age\": \"34\",\r\n        \"email\": \"dshi@gmail.com\",\r\n        \"biography\": \"Domee Shi was born on August 19, 1989 in Chongqing, China. She is a writer, storyboard artist, and director, known for Turning Red (2022), Inside Out (2015) and Bao (2018).\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"director\":{\r\n        \"name\": \"Clint Eastwood\",\r\n        \"age\": \"93\",\r\n        \"email\": \"ceastwood@gmail.com\",\r\n        \"biography\": \"Clint Eastwood was born May 31, 1930 in San Francisco, to Clinton Eastwood Sr., a bond salesman and later manufacturing executive for Georgia-Pacific Corporation, and Ruth Wood (née Margret Ruth Runner), a housewife turned IBM clerk.\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -203,7 +203,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"biography\": \"Born April 18, 1976 in Long Island, New York. Melissa grew up in Sayville, New York. Her acting career started at the age of four, when she did a commercial for a bathtub toy called Splashy. Melissa performed in two plays as the youngest member of New York's Circle Repertory Lab Company. Melissa cites Shirley Temple and Audrey Hepburn as early acting inspirations and still collects memorabilia of the former. She attended New York University.\"\r\n}",
+							"raw": "{\r\n    \"biography\": \"During the mid-'50s he landed uncredited bit parts in such B-films as Revenge of the Creature (1955) and Tarantula (1955) while digging swimming pools and driving a garbage truck to supplement his income. In 1958, he landed his first consequential acting role in the long-running TV show Rawhide (1959) with Eric Fleming. Though only a secondary player the first seven seasons, Clint was promoted to series star when Fleming departed--both literally and figuratively--in its final year, along the way becoming a recognizable face to television viewers around the country.\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -211,7 +211,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5000/api/v1/directors/65d5ae282ea37099cde7f69f",
+							"raw": "localhost:5000/api/v1/directors/65d6f9759574d411a7997c00",
 							"host": [
 								"localhost"
 							],
@@ -220,7 +220,7 @@
 								"api",
 								"v1",
 								"directors",
-								"65d5ae282ea37099cde7f69f"
+								"65d6f9759574d411a7997c00"
 							]
 						}
 					},
@@ -258,7 +258,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/api/v1/directors/65d406694b74cec08e4ffae1",
+							"raw": "localhost:5000/api/v1/directors/65d3c818108f5b19a9227ade",
 							"host": [
 								"localhost"
 							],
@@ -267,7 +267,7 @@
 								"api",
 								"v1",
 								"directors",
-								"65d406694b74cec08e4ffae1"
+								"65d3c818108f5b19a9227ade"
 							]
 						}
 					},
