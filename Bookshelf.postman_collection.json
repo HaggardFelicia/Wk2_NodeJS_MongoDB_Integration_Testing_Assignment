@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "10a2a3f7-5f5d-4071-b00a-7e0b9eac5090",
+		"name": "Bookshelf",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32790837"
+	},
+	"item": [
+		{
+			"name": "Directors",
+			"item": [
+				{
+					"name": "Get All Directors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is either 200 or 201\", () => {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 50ms\", ()=>{\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(50);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Testing Directors has all the required Information\", ()=>{\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.name).to.be.not.null;\r",
+									"    pm.expect(responseJson.age).to.be.not.null;\r",
+									"    pm.expect(responseJson.email).to.be.not.null;\r",
+									"    pm.expect(responseJson.biography).to.be.not.null;\r",
+									"    pm.expect(responseJson.id).to.be.not.null;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/directors",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"directors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Director By Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is either 200 or 201\", () => {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 50ms\", ()=>{\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(50);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Testing Directors has all the required Information\", ()=>{\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.name).to.be.not.null;\r",
+									"    pm.expect(responseJson.age).to.be.not.null;\r",
+									"    pm.expect(responseJson.email).to.be.not.null;\r",
+									"    pm.expect(responseJson.biography).to.be.not.null;\r",
+									"    pm.expect(responseJson.id).to.be.not.null;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/directors/65d5ae282ea37099cde7f69f",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"directors",
+								"65d5ae282ea37099cde7f69f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Director",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is either 200 or 201\", () => {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 50ms\", ()=>{\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(100);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Testing Directors has all the required Information\", ()=>{\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.name).to.be.not.null;\r",
+									"    pm.expect(responseJson.age).to.be.not.null;\r",
+									"    pm.expect(responseJson.email).to.be.not.null;\r",
+									"    pm.expect(responseJson.biography).to.be.not.null;\r",
+									"    pm.expect(responseJson.id).to.be.not.null;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Testing Person Added Information\", ()=>{\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.name).to.eql(\"Domee Shi\");\r",
+									"    pm.expect(responseJson.age).to.eql(34);\r",
+									"    pm.expect(responseJson.email).to.eql(\"dshi@gmail.com\");\r",
+									"    pm.expect(responseJson.biography).to.eql(\"Domee Shi was born on August 19, 1989 in Chongqing, China. She is a writer, storyboard artist, and director, known for Turning Red (2022), Inside Out (2015) and Bao (2018).\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"director\":{\r\n        \"name\": \"Domee Shi\",\r\n        \"age\": \"34\",\r\n        \"email\": \"dshi@gmail.com\",\r\n        \"biography\": \"Domee Shi was born on August 19, 1989 in Chongqing, China. She is a writer, storyboard artist, and director, known for Turning Red (2022), Inside Out (2015) and Bao (2018).\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/directors/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"directors",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Director",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is either 200 or 201\", () => {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 50ms\", ()=>{\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(100);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Testing Directors has all the required Information\", ()=>{\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.name).to.be.not.null;\r",
+									"    pm.expect(responseJson.age).to.be.not.null;\r",
+									"    pm.expect(responseJson.email).to.be.not.null;\r",
+									"    pm.expect(responseJson.biography).to.be.not.null;\r",
+									"    pm.expect(responseJson.id).to.be.not.null;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"biography\": \"Born April 18, 1976 in Long Island, New York. Melissa grew up in Sayville, New York. Her acting career started at the age of four, when she did a commercial for a bathtub toy called Splashy. Melissa performed in two plays as the youngest member of New York's Circle Repertory Lab Company. Melissa cites Shirley Temple and Audrey Hepburn as early acting inspirations and still collects memorabilia of the former. She attended New York University.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/directors/65d5ae282ea37099cde7f69f",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"directors",
+								"65d5ae282ea37099cde7f69f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Author",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is either 200 or 201\", () => {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 50ms\", ()=>{\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(50);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Testing Directors has all the required Information\", ()=>{\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.name).to.be.undefined;\r",
+									"    pm.expect(responseJson.age).to.be.undefined;\r",
+									"    pm.expect(responseJson.email).to.be.undefined;\r",
+									"    pm.expect(responseJson.biography).to.be.undefined;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/directors/65d406694b74cec08e4ffae1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"directors",
+								"65d406694b74cec08e4ffae1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "Get All Movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/movies",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movie By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/movies/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"movies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Movie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movie\":{\r\n        \"title\": \"Twister\",\r\n        \"genre\": \"Action\",\r\n        \"director\": \"Jan de Bont\",\r\n        \"year\": \"1996\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/movies",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Movie",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"genre\":\"Adventure\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/movies/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"movies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Movie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/movies/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"movies",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
